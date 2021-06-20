@@ -51,7 +51,7 @@ const preference = {
         ],
         "installments": 6
     },
-    "notification_url": app_url + "ipn",
+    "notification_url": app_url + "notifications?source_news=webhooks",
     "statement_descriptor": "MINEGOCIO",
     "external_reference": "gonzalocameto@gmail.com"
 };
@@ -116,13 +116,13 @@ app.get('/pago_pendiente', function (req, res) {
     res.render('pago_pendiente', req.query);
 });
 
-let ipn = [];
-app.get('/ipn', function (req, res) {
-    res.send(ipn);
+let notifications = [];
+app.get('/notifications', function (req, res) {
+    res.send(notifications);
 });
-app.post('/ipn', function (req, res) {
-    ipn.push(req.body)
-    res.send(ipn);
+app.post('/notifications', function (req, res) {
+    notifications.push(req.body)
+    res.send(notifications);
 });
 
 app.listen(port);

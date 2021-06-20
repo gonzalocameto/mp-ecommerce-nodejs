@@ -106,17 +106,6 @@ app.get('/pagar', function (req, res) {
 
 
 app.get('/pago_exitoso', function (req, res) {
-    req.query.collection_id=15444174535
-    req.query.collection_status='approved'
-    req.query.payment_id=15444174535
-    req.query.status='approved'
-    req.query.external_reference='gonzalocameto@gmail.com'
-    req.query.payment_type='credit_card'
-    req.query.merchant_order_id=2836026687
-    req.query.preference_id='469485398-e4aa51d3-38ff-48b9-a6ae-c00dbc725706'
-    req.query.site_id='MLA'
-    req.query.processing_mode='aggregator'
-    req.query.merchant_account_id=null
     res.render('pago_exitoso', req.query);
 });
 
